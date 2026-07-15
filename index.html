@@ -45,11 +45,23 @@ body{font-family:NF,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,san
 .addr svg{width:22px;height:22px;color:#EA3223;flex-shrink:0}
 .addr span{font-size:13.5px;font-weight:600;color:#dbe0e6}
 .spacer{flex:1}
-.foot{margin-top:26px;background:#EA3223;text-align:center;padding:16px}
-.foot b{font-size:14px;font-weight:800;letter-spacing:.02em}
-.foot small{display:block;margin-top:3px;font-size:12px;color:#ffe3df;font-weight:600}
+/* Fusszeile: keine Farbflaeche mehr (harte Kante nach den runden Karten sah
+   UI-technisch inkonsistent aus) - nur eine duenne Trennlinie im Stil der
+   Tile-Rahmen, Text schlicht weiss/grau. Gleiche Formsprache wie oben. */
+.foot{margin-top:28px;padding:22px 24px 4px;text-align:center;
+  border-top:1px solid #2f3944}
+.foot b{color:#fff;font-size:14px;font-weight:800;letter-spacing:.03em}
+.foot small{display:block;margin-top:5px;font-size:11.5px;color:#8a93a0;
+  font-weight:600;letter-spacing:.02em}
 .note{text-align:center;color:#7f8894;font-size:11px;padding:14px 24px 24px;line-height:1.5;
   text-wrap:balance}
+/* Ab "nicht mehr Handy"-Breite hat .wrap seine 460px-Deckelung erreicht;
+   der Hinweistext bekommt hier gezielt mehr Raum als der Rest der Karte,
+   damit er einzeilig bleibt. Handy (<=480px) bleibt unveraendert. */
+@media (min-width:481px){
+  .note{width:560px;max-width:560px;margin-left:-50px;margin-right:-50px;
+    white-space:nowrap;text-wrap:initial}
+}
 </style></head><body>
 <div class="wrap">
   <div class="hero">
